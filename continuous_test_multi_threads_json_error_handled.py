@@ -16,13 +16,13 @@ def read_json_or_jsonl(path):
         txt = f.read().strip()
     if not txt:
         return []
-    # 先试“单个 JSON”
+
     try:
         obj = json.loads(txt)
         return obj if isinstance(obj, list) else [obj]
     except json.JSONDecodeError:
         pass
-    # 回退为 JSONL（逐行多个 JSON）
+
     records = []
     with open(path, "r", encoding="utf-8") as f:
         for ln, line in enumerate(f, 1):
@@ -32,7 +32,6 @@ def read_json_or_jsonl(path):
             try:
                 records.append(json.loads(line))
             except json.JSONDecodeError:
-                # 并发写入时可能出现半行，直接跳过
                 continue
     return records
 
