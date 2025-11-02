@@ -1,4 +1,4 @@
-# Jailbreaking LLMs: A Progressive Semantic Attack Framework
+# Semantic Steer Chain: Efficient and Precise Black-Box Jailbreaking through Adaptive Approximation
 
 ## Overview
 This project implements a novel jailbreaking technique that progressively guides large language models (LLMs) to generate restricted content through semantic stepping. The framework uses three specialized LLMs working in concert to bypass model safeguards:
@@ -66,21 +66,19 @@ python multi_threads.py
 |----------------------|---------------------------------------------------|------------------------------------------|
 | `--goal`             | Restricted content to generate                    | "Explain how to tamper with voting machines in an election" |
 | `--helper-model`     | Model generating intermediate steps               | "kimi-k2"                                |
-| `--target-model`     | Model being attacked                              | "deepseek-r1"                            |
-| `--judge-model`      | Model evaluating success                          | "gemini-2.5-flash"                       |
+| `--target-model`     | Model being attacked                              | "gemini-2.5-pro"                         |
+| `--judge-model`      | Model evaluating success                          | "deepseek-v3"                            |
 | `--num-of-prompts`   | Number of intermediate steps to generate          | 5                                        |
 | `--max-backtrack`    | Maximum regeneration attempts after rejection     | 3                                        |
 | `--max-restart`      | Total attack attempts before failure              | 1                                        |
 | `--local`            | Use locally deployed models (not recommended)     | False                                    |
 
 ## Result Analysis
-Experiment results are saved in `outputs/` as timestamped JSON files containing:
+Experiment results are saved in `Experimental_results/` as timestamped JSON files containing:
 
 - Full attack sequence with prompts and responses
 - Judge evaluation scores
 - Final success status
-
-## Ethical Considerations
 
 ## Acknowledgments
 This research builds upon prior work in:

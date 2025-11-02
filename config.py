@@ -56,7 +56,7 @@ API_KEY = {
     "gpt-5-nano":"CHATANYWHERE_API_KEY",
     "gpt-3.5-turbo":"CHATANYWHERE_API_KEY",
     "gpt-4-turbo":"CHATANYWHERE_API_KEY",
-    #"gpt-5-mini":"METACHAT_API_KEY", 要用的话建议全部改成 CHATANYWHERE_API_KEY， METACHAT_API_KEY 太贵了
+    #"gpt-5-mini":"METACHAT_API_KEY", 
     #"gpt-5":"METACHAT_API_KEY",
     "gpt-4":"EVENAI_API_KEY",
     "claude-opus-4": "METACHAT_API_KEY",

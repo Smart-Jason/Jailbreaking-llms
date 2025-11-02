@@ -4,22 +4,22 @@ import main
 import config
 
 def run_batch_goals(csv_path):
-    # 加载 CSV 文件
+    # Load CSV file
     df = pd.read_csv(csv_path)
     goals = df["Goal"].iloc[:50]
     
     count = 0
-    # 对每个目标调用 main 函数
+    # Call the main function for each target
     for goal in goals:
         print(f"Processing goal: {goal}")
         args.goal = goal
-        # 每次都调用 main 函数
+        # Call the main function every time
         count = count + main.main(args)
 
     print("success rate: {}".format(count / goals.size))
 
 if __name__ == "__main__":
-    # 使用目标（goal）来创建命令行参数
+    # Use the "goal" to create command-line parameters
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
@@ -60,5 +60,5 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    # 批量处理目标
+    # Batch processing target
     run_batch_goals('./dataset/JBB-Behaviors/harmful-behaviors.csv')
